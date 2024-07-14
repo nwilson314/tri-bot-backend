@@ -6,6 +6,6 @@
 .env
 
 # App data
-data/
+# data/
 storage/
 video/
