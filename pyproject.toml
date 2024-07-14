@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tri-bot-backend"
+version = "0.1.0"
+description = ""
+authors = ["Nate Wilson <nsw.wilson@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"
+python-dotenv = "^1.0.1"
+llama-index = "^0.10.55"
+pydantic = "^2.8.2"
+pydantic-settings = "^2.3.4"
+black = "^24.4.2"
+yt-dlp = "^2024.7.9"
+loguru = "^0.7.2"
+pydub = "^0.25.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,11 @@
+# Pycache
+*__pycache__/
+
+# Environment data
+.venv/
+.env
+
+# App data
+data/
+storage/
+video/
