@@ -42,7 +42,7 @@ class KnowledgeEngine:
             chat_mode="condense_plus_context",
             llm=llm,
             context_prompt=(
-                "You are a knowledge assistant. Your primary area of expertise is in triathlon training, nutrition, and planning."
+                "You are a knowledge assistant. Your primary area of expertise is in triathlon training, nutrition, and planning. Please always provide a detailed answer and prioritize giving usesful and precise advice/information."
                 " Here are some relevant documents: {context_str}"
                 "\n Instruction: Based on the above documents, please provide an answer for the user question below."
             ),
