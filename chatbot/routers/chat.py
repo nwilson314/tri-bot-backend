@@ -35,8 +35,7 @@ async def chat(
     ]
 
     # query chat engine
-    chat_engine = knowledge_engine.index.as_chat_engine()
-    response = chat_engine.chat(lastMessage.content, messages)
+    response = knowledge_engine.chat_engine.chat(lastMessage.content, messages)
     return ChatResult(
         result=ChatMessage(role=MessageRole.ASSISTANT, content=response.response)
     )

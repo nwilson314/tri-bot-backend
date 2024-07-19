@@ -42,6 +42,8 @@ else:
     knowledge_engine.load_index_from_storage()
     logger.debug("Index loaded from storage.")
 
+knowledge_engine.create_chat_engine()
+
 @app.get("/")
 async def root():
     return {
