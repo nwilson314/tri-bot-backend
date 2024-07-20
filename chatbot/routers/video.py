@@ -8,6 +8,8 @@ from pydub import AudioSegment
 import yt_dlp
 from openai import OpenAI
 
+from chatbot.settings import settings
+
 client = OpenAI()
 router = APIRouter(
     prefix="/video"
@@ -41,6 +43,8 @@ def split_audio(audio_path, chunk_length_ms=60000):
 async def download_transcribe_video(
     body: VideoTranscribeBody
 ):
+    if settings.environment != "dev":
+        raise HTTPException(status_code=500, detail="Transcription is only available in development mode")
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(body.path, download=False)
         error_code = ydl.download([body.path])

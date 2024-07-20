@@ -32,6 +32,15 @@ if environment == "dev":
         allow_methods=["*"],
         allow_headers=["*"],
     )
+else:
+    logger.warning("Running in production mode - disabling CORS")
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["https://tri-bot-frontend.fly.dev/"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 
 
 if settings.create_knowledge_base:
